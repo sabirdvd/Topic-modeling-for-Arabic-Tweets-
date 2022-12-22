@@ -24,7 +24,6 @@ To clean and pre-process the dataset
 
 ```
 python arabic_cleaner.py
-
 ```
 
 clean dataset 
