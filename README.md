@@ -39,5 +39,10 @@ unzip cleaned_tweet_gen_remove_emoji_v4.csv.zip
 
 # Code 
 
+```
+run.sh
+```
+
+
 
 
