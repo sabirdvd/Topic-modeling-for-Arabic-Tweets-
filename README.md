@@ -18,6 +18,27 @@ pip install flair
 # Dataset 
 The dataset is based on ArabGend dataset 2022 [1] 108053 tweets 
 
+Getting the twitt ID from [1] and then retrive the tweet f
+
+```
+twarc2 hydrate ids.txt tweets.jsonl
+twarc2 hydrate twitt_ID.txt tweets.jsonl
+
+``` 
+
+Convert json file to CSV [twarc](https://github.com/DocNow/twarc-csv)
+
+```
+pip3 install --upgrade twarc-csv
+twarc2 csv --no-json-encode-all tweets.json tweets_CSV.csv
+```
+
+
+
+
+
+
+
 To clean and pre-process the dataset 
 
 ```
