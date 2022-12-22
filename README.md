@@ -39,9 +39,18 @@ unzip cleaned_tweet_gen_remove_emoji_v4.csv.zip
 
 # Training
 
+For Topic modeling via [umap](https://umap-learn.readthedocs.io/en/latest/basic_usage.html)
+
 ```
-run.sh
+run_umap.sh
 ```
+
+For Topic modeling via [HDBSCAN](https://hdbscan.readthedocs.io/en/latest/how_hdbscan_works.html)
+
+```
+run_hdbscan.sh
+``` 
+
 
 # Infereance 
 
