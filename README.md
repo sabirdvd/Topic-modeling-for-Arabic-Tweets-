@@ -34,12 +34,6 @@ twarc2 csv --no-json-encode-all tweets.json tweets_CSV.csv
 csvcut --columns id,text tweets_CSV.csv
 ```
 
-
-
-
-
-
-
 To clean and pre-process the dataset 
 
 ```
@@ -75,7 +69,6 @@ For joint model (umap+hdbscan)
 ```
 run joint.sh 
 ```
-
 
 # Infereance 
 
