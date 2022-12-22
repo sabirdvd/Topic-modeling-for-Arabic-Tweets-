@@ -43,7 +43,9 @@ unzip cleaned_tweet_gen_remove_emoji_v4.csv.zip
 run.sh
 ```
 
-# infereance 
+# Infereance 
+
+loading the tranined model 
 
 ```
 python infer.py
