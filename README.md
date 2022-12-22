@@ -16,9 +16,7 @@ pip install flair
 ``` 
 
 # Dataset 
-The dataset is based on ArabGend dataset 2022 [1] 
-
-
+The dataset is based on ArabGend dataset 2022 [1] 108053 tweets 
 
 To clean and pre-process the dataset 
 
