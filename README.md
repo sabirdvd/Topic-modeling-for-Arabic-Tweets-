@@ -18,7 +18,7 @@ pip install flair
 # Dataset 
 The dataset is based on the ArabGend dataset 2022 [1] 108053 tweets 
 
-Getting the tweets ID from [1] and then retrieve tweets using [Twitter API](https://developer.twitter.com/en/docs/twitter-api/getting-started/getting-access-to-the-twitter-api) 
+Getting the tweets ID from [1] and then [retrieve tweets](https://twittercommunity.com/t/arabic-tweets-in-unicode/159595/2) using [Twitter API](https://developer.twitter.com/en/docs/twitter-api/getting-started/getting-access-to-the-twitter-api) 
 
 ```
 pip install twarc
