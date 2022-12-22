@@ -46,7 +46,7 @@ To clean and pre-process the dataset
 python arabic_cleaner.py
 ```
 
-clean dataset 
+Clean dataset 
 ``` 
 wget https://www.dropbox.com/s/3fqno4wxyktlclu/cleaned_tweet_gen_remove_emoji_v4.csv.zip 
 unzip cleaned_tweet_gen_remove_emoji_v4.csv.zip
