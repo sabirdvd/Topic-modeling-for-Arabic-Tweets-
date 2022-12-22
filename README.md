@@ -50,6 +50,12 @@ For Topic modeling via [HDBSCAN](https://hdbscan.readthedocs.io/en/latest/how_hd
 run_hdbscan.sh
 ``` 
 
+For joint model (umap+hdbscan)
+
+```
+run joint.sh 
+```
+
 
 # Infereance 
 
