@@ -37,12 +37,16 @@ unzip cleaned_tweet_gen_remove_emoji_v4.csv.zip
 
 
 
-# Code 
+# Training
 
 ```
 run.sh
 ```
 
+# infereance 
 
+```
+python infer.py
+``` 
 
 
