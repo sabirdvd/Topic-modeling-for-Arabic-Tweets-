@@ -1,5 +1,7 @@
 # Topic modeling for Arabic Tweets
 
+[Interactive demo](https://ahmed.jp/visual_topics.html)
+
 
 Create conda  environments
 
