@@ -4,9 +4,11 @@
 
 
 ## Table of Contents
-- <a href='#Dataset</a>
-- <a href='#Training</a>
-- <a href='#Inference</a>
+- <a href='#Dataset'>Dataset</a>
+- <a href='#Training'>Training</a>
+- <a href='#Inference '>Inference</a>
+
+
 
 <!--
 - <a href='#Image-Text-Retrieval'>Image/Text Retrieval</a>
@@ -27,7 +29,7 @@ pip install bertopic
 pip install flair  
 ``` 
 
-# Dataset 
+## Dataset 
 The dataset is based on the ArabGend dataset 2022 [1] 108053 tweets 
 
 Getting the tweets ID from [1] and then [retrieve tweets](https://twittercommunity.com/t/arabic-tweets-in-unicode/159595/2) using [Twitter API](https://developer.twitter.com/en/docs/twitter-api/getting-started/getting-access-to-the-twitter-api) 
@@ -62,7 +64,7 @@ unzip cleaned_tweet_gen_remove_emoji_v4.csv.zip
 
 
 
-# Training
+## Training
 
 For Topic modeling via [umap](https://umap-learn.readthedocs.io/en/latest/basic_usage.html)
 
@@ -82,7 +84,7 @@ For joint model (umap+hdbscan)
 run joint.sh 
 ```
 
-# Inference 
+## Inference 
 
 loading the tranined model 
 
