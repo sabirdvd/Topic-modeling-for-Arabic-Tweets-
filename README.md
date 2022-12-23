@@ -3,6 +3,16 @@
 [Interactive demo](https://ahmed.jp/visual_topics.html)
 
 
+## Table of Contents
+- <a href='#Dataset</a>
+- <a href='#Training</a>
+- <a href='#Inference</a>
+
+<!--
+- <a href='#Image-Text-Retrieval'>Image/Text Retrieval</a>
+-->
+
+
 Create conda  environments
 
 ```
