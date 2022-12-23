@@ -72,7 +72,7 @@ For joint model (umap+hdbscan)
 run joint.sh 
 ```
 
-# Infereance 
+# Inference 
 
 loading the tranined model 
 
