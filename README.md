@@ -94,5 +94,5 @@ python infer.py
 
 ## Topic by Gender
 
-Also, we could extract the most topic twitted by man.
+Also, we could extract the most topic twitted by man or woman.
 
