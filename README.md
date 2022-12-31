@@ -92,4 +92,7 @@ loading the tranined model
 python infer.py
 ``` 
 
+## Topic by Gender
+
+Also, we could extract the most topic twitted by man.
 
