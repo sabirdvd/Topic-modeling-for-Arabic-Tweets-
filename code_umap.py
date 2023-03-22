@@ -8,21 +8,12 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.decomposition import NMF
 from umap import UMAP
 
-#data=  pd.read_csv("arabic_dataset_classifiction_reduit.csv")
-''''
- We used "DataSet for Arabic Classification" [1] which contains 111,728 Arabic documents written in Modern
-Standard Arabic (MSA). The dataset was collected from three Arabic online newspapers: Assabah, Hespress and
-Akhbarona. The documents in the dataset are categorized into 5 classes: sport, politics, culture, economy and diverse.
-We removed 2939 missing documents and ran the experiments with the remaining 108789 documents without any
-document labels. The text contains only alphabetic, numeric and symbolic words, so we have not applied any
-preprocessing as the text is almost clean
-[1] M. Biniz, “DataSet for Arabic Classification,” vol. 1, Mar. 2018, doi: 10.17632/v524p5dhpj.1
-'''
+
   
-  
-#arabic_dataset_classifiction
-data = pd.read_csv("arabic_dataset_classifiction.csv")
-# tweets results 
+# Dataset from ArabGend: Gender analysis and inference on Arabic Twitter
+data = pd.read_csv("arab_gen_twitter.csv")
+
+# tweets results example 
 #('عناصر', 0.005736651291083146), 
 #('المتهم', 0.005521592810937796), 
 #('الدرك', 0.00502498458456131), 
@@ -34,9 +25,6 @@ data = pd.read_csv("arabic_dataset_classifiction.csv")
 #('الشرطة', 0.003955431150969441), 
 #('الضابطة', 0.003934071447302295)
 
-# results 
-#data = pd.read_csv("tweet_print_v2.csv")
-#data = pd.read_csv("SaudiIrony.csv")
 data.head()
 
 # shape  
