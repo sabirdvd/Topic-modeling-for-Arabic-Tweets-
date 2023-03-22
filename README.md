@@ -1,5 +1,8 @@
 # Topic modeling for Arabic Tweets
 
+This code is adopted from this study [BERT for Arabic Topic Modeling: An Experimental Study on BERTopic Technique](https://www.sciencedirect.com/science/article/pii/S1877050921012199)
+
+
 [Interactive demo](https://ahmed.jp/visual_topics.html)
 
 
