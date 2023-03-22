@@ -92,7 +92,6 @@ loading the tranined model
 python infer.py
 ``` 
 
-## Topic by Gender
-
-Also, we could extract the most topic twitted by man or woman.
+# refererence
+[1] https://github.com/iwan-rg/Arabic-Topic-Modeling 
 
