@@ -56,8 +56,9 @@ python arabic_cleaner.py
 
 Clean dataset 
 ``` 
-wget https://www.dropbox.com/s/3fqno4wxyktlclu/cleaned_tweet_gen_remove_emoji_v4.csv.zip 
-unzip cleaned_tweet_gen_remove_emoji_v4.csv.zip
+wget https://www.dropbox.com/s/87hnyoi8ep073gh/arab_gen_twitter.csv.zip
+
+unzip arab_gen_twitter.csv.zip
 ```
 
 [1] [ArabGend:Gender Analysis and Inference on Arabic Twitter](https://aclanthology.org/2022.wnut-1.14.pdf)
