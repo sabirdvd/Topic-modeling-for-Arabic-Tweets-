@@ -10,9 +10,8 @@ from bertopic import BERTopic
 from hdbscan import HDBSCAN
 
 
-#data = pd.read_csv("tweet_print_v2.csv")
-#data = pd.read_csv("/Users/asabir/Downloads/ahmad_test/tweet_gen_remove_emoji.csv_cleaned.csv")
-data = pd.read_csv("cleaned_tweet_gen_remove_emoji_v4.csv")
+
+data = pd.read_csv("arab_gen_twitter.csv")
 #data = pd.read_csv("SaudiIrony.csv")
 data.head()
 
