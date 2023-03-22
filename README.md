@@ -57,7 +57,6 @@ python arabic_cleaner.py
 Clean dataset 
 ``` 
 wget https://www.dropbox.com/s/87hnyoi8ep073gh/arab_gen_twitter.csv.zip
-
 unzip arab_gen_twitter.csv.zip
 ```
 
