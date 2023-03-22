@@ -3,6 +3,8 @@
 This code is adopted from this study [BERT for Arabic Topic Modeling: An Experimental Study on BERTopic Technique](https://www.sciencedirect.com/science/article/pii/S1877050921012199)
 
 
+Please refer to this [blog post](https://ahmed.jp/blog/2022-12-ArabTop/ArabTop_2022.html) for more detail.
+
 [Interactive demo](https://ahmed.jp/visual_topics.html)
 
 
