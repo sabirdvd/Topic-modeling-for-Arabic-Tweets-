@@ -10,9 +10,8 @@ from bertopic import BERTopic
 from umap import UMAP
 from hdbscan import HDBSCAN
 
-
+# Dataset from ArabGend: Gender analysis and inference on Arabic Twitter
 data = pd.read_csv("arab_gen_twitter.csv")
-#data = pd.read_csv("SaudiIrony.csv")
 data.head()
 
 # shape  
