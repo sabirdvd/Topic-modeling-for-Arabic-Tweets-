@@ -79,7 +79,7 @@ tfidf = tfidf_vectorizer.fit_transform(documents)
 tfidf_feature_names = tfidf_vectorizer.get_feature_names()
 
 
-#chang the number of topics here
+#change the number of topics here
 no_topics = 5
 
 # run NMF
