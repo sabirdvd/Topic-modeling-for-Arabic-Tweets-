@@ -24,13 +24,13 @@ arabert = TransformerDocumentEmbeddings('aubmindlab/bert-large-arabertv02-twitte
 hdbscan_model = HDBSCAN(min_cluster_size=15, metric='euclidean', cluster_selection_method='eom', prediction_data=True)
 umap_model = UMAP(n_neighbors=15, n_components=5, min_dist=0.0, metric='cosine', random_state=42)
 
-model = BERTopic(language="arabic", low_memory=True ,calculate_probabilities=False, embedding_model=arabert, hdbscan_model=hdbscan_model, umap_model=umap_model)
+topic_model = BERTopic(language="arabic", low_memory=True ,calculate_probabilities=False, embedding_model=arabert, hdbscan_model=hdbscan_model, umap_model=umap_model)
 
 #umap_model = UMAP(n_neighbors=15, n_components=5, min_dist=0.0, metric='cosine', random_state=42)
 #model = BERTopic(language="arabic", low_memory=True ,calculate_probabilities=False, embedding_model=arabert, umap_model=umap_model)
 
 
-topics, probs = model.fit_transform(documents)
+topics, probs = topic_model.fit_transform(documents)
 
 #extract most frequent topics
 topic_model.get_topic_freq().head(5)                     
@@ -50,9 +50,9 @@ for i in topic_model.get_topics():
 
 
 # compute coherence score
-#cm = CoherenceModel(topics=topics, texts=texts, corpus=corpus, dictionary=id2word, coherence='c_npmi')
-#coherence = cm.get_coherence() 
-#print('\nCoherence Score: ', coherence)
+cm = CoherenceModel(topics=topics, texts=texts, corpus=corpus, dictionary=id2word, coherence='c_v')
+coherence = cm.get_coherence() 
+print('\nCoherence Score: ', coherence)
 
 
 # Visualize the topics
@@ -68,7 +68,7 @@ no_topics = 5
 # run LDA 
 lda = LdaMulticore(corpus, id2word=id2word, num_topics=no_topics)
 #compute Coherence Score
-coherence_model_lda = CoherenceModel(model=lda, texts=texts, dictionary=id2word, coherence='c_npmi')
+coherence_model_lda = CoherenceModel(model=lda, texts=texts, dictionary=id2word, coherence='c_v')
 coherence_lda = coherence_model_lda.get_coherence()
 print('\nCoherence Score: ', coherence_lda)
 
@@ -93,7 +93,7 @@ for index, topic in enumerate(nmf.components_):
     topics_NMF.append(row)
 
 
-cm = CoherenceModel(topics=topics_NMF, texts=texts, corpus=corpus, dictionary=id2word, coherence='c_npmi')
+cm = CoherenceModel(topics=topics_NMF, texts=texts, corpus=corpus, dictionary=id2word, coherence='c_v')
 coherence_nmf = cm.get_coherence()  
 print('\nCoherence Score: ', coherence_nmf)
 
