@@ -10,8 +10,8 @@ from bertopic import BERTopic
 from umap import UMAP
 from hdbscan import HDBSCAN
 
-# Dataset from ArabGend: Gender analysis and inference on Arabic Twitter
-data = pd.read_csv("arab_gen_twitter.csv")
+
+data = pd.read_csv("cleaned_tweet_gen_remove_emoji_v4.csv")
 data.head()
 
 # shape  
@@ -51,50 +51,9 @@ for i in topic_model.get_topics():
 
 # compute coherence score
 cm = CoherenceModel(topics=topics, texts=texts, corpus=corpus, dictionary=id2word, coherence='c_v')
+#cm = CoherenceModel(topics=topics, texts=texts, corpus=corpus, dictionary=id2word, coherence='u_mass')
+#cm = CoherenceModel(topics=topics, texts=texts, corpus=corpus, dictionary=id2word, coherence='c_npmi')
 coherence = cm.get_coherence() 
 print('\nCoherence Score: ', coherence)
-
-
-# Visualize the topics
-#topic_model.visualize_topics()
-
-# save the twitter 
-topic_model.save("model_twitter_joint")	
-# Load model
-model = BERTopic.load("model_twitter_joint")
-#chang the number of topics here
-no_topics = 5
-
-# run LDA 
-lda = LdaMulticore(corpus, id2word=id2word, num_topics=no_topics)
-#compute Coherence Score
-coherence_model_lda = CoherenceModel(model=lda, texts=texts, dictionary=id2word, coherence='c_v')
-coherence_lda = coherence_model_lda.get_coherence()
-print('\nCoherence Score: ', coherence_lda)
-
-# run NMF
-# NMF is able to use tf-idf
-tfidf_vectorizer = TfidfVectorizer(max_df=0.95, min_df=2)
-tfidf = tfidf_vectorizer.fit_transform(documents)
-tfidf_feature_names = tfidf_vectorizer.get_feature_names()
-
-
-#change the number of topics here
-no_topics = 5
-
-# run NMF
-nmf = NMF(n_components=no_topics, random_state=1, alpha=.1, l1_ratio=.5, init='nndsvd').fit(tfidf)
-
-topics_NMF=[]
-for index, topic in enumerate(nmf.components_):
-    row=[]
-    for i in topic.argsort()[-10:]:
-      row.append(tfidf_vectorizer.get_feature_names()[i])
-    topics_NMF.append(row)
-
-
-cm = CoherenceModel(topics=topics_NMF, texts=texts, corpus=corpus, dictionary=id2word, coherence='c_v')
-coherence_nmf = cm.get_coherence()  
-print('\nCoherence Score: ', coherence_nmf)
 
 

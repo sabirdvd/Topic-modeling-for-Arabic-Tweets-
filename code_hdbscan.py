@@ -7,12 +7,12 @@ from gensim.models import LdaMulticore
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.decomposition import NMF
 from bertopic import BERTopic
+
 from hdbscan import HDBSCAN
 
 
+data = pd.read_csv("cleaned_tweet_gen_remove_emoji_v4.csv")
 
-data = pd.read_csv("arab_gen_twitter.csv")
-#data = pd.read_csv("SaudiIrony.csv")
 data.head()
 
 # shape  
@@ -21,7 +21,7 @@ data = data.dropna()
 documents = data['text'].values
 arabert = TransformerDocumentEmbeddings('aubmindlab/bert-large-arabertv02-twitter')
 
-# Topic Modeling
+# Topic ModelingL
 hdbscan_model = HDBSCAN(min_cluster_size=15, metric='euclidean', cluster_selection_method='eom', prediction_data=True)
 topic_model = BERTopic(language="arabic", low_memory=True ,calculate_probabilities=False, embedding_model=arabert, hdbscan_model=hdbscan_model)
 
@@ -45,51 +45,19 @@ for i in topic_model.get_topics():
 
 
 # compute coherence score
-#cm = CoherenceModel(topics=topics, texts=texts, corpus=corpus, dictionary=id2word, coherence='c_npmi')
-#coherence = cm.get_coherence() 
-#print('\nCoherence Score: ', coherence)
+#cm = CoherenceModel(topics=topics, texts=texts, corpus=corpus, dictionary=id2word, coherence='u_mass')
+cm =  CoherenceModel(topics=topics, texts=texts, corpus=corpus, dictionary=id2word, coherence='c_v')
+#cm = CoherenceModel(topics=topics, texts=texts, corpus=corpus, dictionary=id2word, coherence='u_mass')
+
+coherence = cm.get_coherence() 
+print('\nCoherence Score: ', coherence)
 
 
 # Visualize the topics
 #topic_model.visualize_topics()
 
-# save the twitter 
-topic_model.save("model_twitter_hdbscan")	
-# Load model
-model = BERTopic.load("model_twitter_hdbscan")
-#chang the number of topics here
-no_topics = 5
+# save the model 
+topic_model.save("model_hdbscan")	
 
-# run LDA 
-lda = LdaMulticore(corpus, id2word=id2word, num_topics=no_topics)
-#compute Coherence Score
-coherence_model_lda = CoherenceModel(model=lda, texts=texts, dictionary=id2word, coherence='c_npmi')
-coherence_lda = coherence_model_lda.get_coherence()
-print('\nCoherence Score: ', coherence_lda)
-
-# run NMF
-# NMF is able to use tf-idf
-tfidf_vectorizer = TfidfVectorizer(max_df=0.95, min_df=2)
-tfidf = tfidf_vectorizer.fit_transform(documents)
-tfidf_feature_names = tfidf_vectorizer.get_feature_names()
-
-
-#chang the number of topics here
-no_topics = 5
-
-# run NMF
-nmf = NMF(n_components=no_topics, random_state=1, alpha=.1, l1_ratio=.5, init='nndsvd').fit(tfidf)
-
-topics_NMF=[]
-for index, topic in enumerate(nmf.components_):
-    row=[]
-    for i in topic.argsort()[-10:]:
-      row.append(tfidf_vectorizer.get_feature_names()[i])
-    topics_NMF.append(row)
-
-
-cm = CoherenceModel(topics=topics_NMF, texts=texts, corpus=corpus, dictionary=id2word, coherence='c_npmi')
-coherence_nmf = cm.get_coherence()  
-print('\nCoherence Score: ', coherence_nmf)
 
 
