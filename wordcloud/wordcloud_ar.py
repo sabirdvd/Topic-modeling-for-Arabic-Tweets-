@@ -23,7 +23,7 @@ import warnings
 warnings.filterwarnings("ignore")
 
 
-data = pd.read_csv("cleaned_tweet_gen_remove_emoji_v4.csv")
+data = pd.read_csv("arab_gen_twitter.csv")
 
 data.head()
 
