@@ -13,18 +13,6 @@ from umap import UMAP
 # Dataset from ArabGend: Gender analysis and inference on Arabic Twitter
 data = pd.read_csv("arab_gen_twitter.csv")
 
-# tweets results example 
-#('عناصر', 0.005736651291083146), 
-#('المتهم', 0.005521592810937796), 
-#('الدرك', 0.00502498458456131), 
-#('القضائية', 0.0050212182104924), 
-#('اعتقال', 0.004773258920235465), 
-#('المخدرات', 0.004162502451645349), 
-#('الابتدائية', 0.00396287623139702), 
-#('النيابة', 0.0039598014028783286), 
-#('الشرطة', 0.003955431150969441), 
-#('الضابطة', 0.003934071447302295)
-
 data.head()
 
 # shape  
@@ -99,7 +87,7 @@ for index, topic in enumerate(nmf.components_):
     topics_NMF.append(row)
 
 
-cm = CoherenceModel(topics=topics_NMF, texts=texts, corpus=corpus, dictionary=id2word, coherence='c_npmi')
+cm = CoherenceModel(topics=topics_NMF, texts=texts, corpus=corpus, dictionary=id2word, coherence='c_v')
 coherence_nmf = cm.get_coherence()  
 print('\nCoherence Score: ', coherence_nmf)
 
