@@ -11,7 +11,7 @@ from bertopic import BERTopic
 from hdbscan import HDBSCAN
 
 
-data = pd.read_csv("cleaned_tweet_gen_remove_emoji_v4.csv")
+data = pd.read_csv("arab_gen_twitter.csv")
 
 data.head()
 
@@ -26,6 +26,8 @@ hdbscan_model = HDBSCAN(min_cluster_size=15, metric='euclidean', cluster_selecti
 topic_model = BERTopic(language="arabic", low_memory=True ,calculate_probabilities=False, embedding_model=arabert, hdbscan_model=hdbscan_model)
 
 topics, probs = topic_model.fit_transform(documents)
+
+
 
 #extract most frequent topics
 topic_model.get_topic_freq().head(5)                     
