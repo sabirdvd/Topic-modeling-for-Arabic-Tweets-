@@ -50,45 +50,4 @@ print('\nCoherence Score: ', coherence)
 
 
 # Visualize the topics
-topic_model.visualize_topics()
-
-# save the twitter 
-topic_model.save("model_ump")	
-# Load model
-model = BERTopic.load("model_ump")
-#chang the number of topics here
-no_topics = 5
-
-# run LDA 
-lda = LdaMulticore(corpus, id2word=id2word, num_topics=no_topics)
-#compute Coherence Score
-coherence_model_lda = CoherenceModel(model=lda, texts=texts, dictionary=id2word, coherence='c_npmi')
-coherence_lda = coherence_model_lda.get_coherence()
-print('\nCoherence Score: ', coherence_lda)
-
-# run NMF
-# NMF is able to use tf-idf
-tfidf_vectorizer = TfidfVectorizer(max_df=0.95, min_df=2)
-tfidf = tfidf_vectorizer.fit_transform(documents)
-tfidf_feature_names = tfidf_vectorizer.get_feature_names()
-
-
-#chang the number of topics here
-no_topics = 5
-
-# run NMF
-nmf = NMF(n_components=no_topics, random_state=1, alpha=.1, l1_ratio=.5, init='nndsvd').fit(tfidf)
-
-topics_NMF=[]
-for index, topic in enumerate(nmf.components_):
-    row=[]
-    for i in topic.argsort()[-10:]:
-      row.append(tfidf_vectorizer.get_feature_names()[i])
-    topics_NMF.append(row)
-
-
-cm = CoherenceModel(topics=topics_NMF, texts=texts, corpus=corpus, dictionary=id2word, coherence='c_v')
-coherence_nmf = cm.get_coherence()  
-print('\nCoherence Score: ', coherence_nmf)
-
-
+#topic_model.visualize_topics()
