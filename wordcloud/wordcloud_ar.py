@@ -1,5 +1,6 @@
 
 
+
 import pandas as pd
 from bertopic import BERTopic
 from flair.embeddings import TransformerDocumentEmbeddings
@@ -8,6 +9,10 @@ import gensim.corpora as corpora
 from gensim.models import LdaMulticore
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.decomposition import NMF
+
+# pip install wordcloud
+# pip install arabic-reshaper
+# pip install arabic-reshaper
 
 from wordcloud import WordCloud
 import matplotlib.pyplot as plt
