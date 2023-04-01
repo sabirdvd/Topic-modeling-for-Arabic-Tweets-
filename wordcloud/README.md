@@ -1,4 +1,7 @@
-# pip install wordcloud
-# pip install arabic-reshaper
-# pip install arabic-reshaper
 
+You may want to install
+
+```
+pip install wordcloud
+pip install arabic-reshaper
+``` 
