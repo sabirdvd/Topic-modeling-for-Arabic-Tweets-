@@ -97,7 +97,17 @@ loading the tranined model
 ```
 python infer.py
 ``` 
+ 
+## Citation
 
+If you find this blog useful, please kindly cite it:
 
-
+```bibtex
+@article{sabir2022arabtop,
+  title   = "Review: Topic Modeling for Arabic Language",
+  author  = "Sabir, Ahmed",
+  year    = "2022",
+  url     = "https://ahmed.jp/blog/2022-12-ArabTop/ArabTop_2022"
+}
+```
 
