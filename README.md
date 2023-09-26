@@ -97,7 +97,8 @@ loading the tranined model
 ```
 python infer.py
 ``` 
- 
+
+ <!--
 ## Citation
 
 If you find this blog useful, please kindly cite it:
@@ -110,4 +111,8 @@ If you find this blog useful, please kindly cite it:
   url     = "https://ahmed.jp/blog/2022-12-ArabTop/ArabTop_2022"
 }
 ```
+-->
+## Acknowledgment
+
+The implementation of the project relies on resources from BERTopic, Huggingface Transformers, and SBERT. We thank the original authors for their well-organized codebase.
 
