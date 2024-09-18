@@ -6,6 +6,9 @@ This code is adopted from this study [BERT for Arabic Topic Modeling: An Experim
 
 Please refer to this [blog post](https://ahmed.jp/blog/2022-12-ArabTop/ArabTop_2022.html) for more details about this repository. 
 
+[![huggingface](https://img.shields.io/badge/%F0%9F%A4%97-huggingface-yellow)](https://huggingface.co/datasets/Ayoub-AR/Gulf-Arabic-Tweets-2018-2020)
+
+
 [Interactive demo](https://ahmed.jp/visual_topics.html)
 
 
