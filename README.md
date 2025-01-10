@@ -109,13 +109,13 @@ If you choose to cite this blog or not, please use the following citation as a r
 ```bibtex
 @misc{ahmed2022arabtop,
   author       = {Ahmed},
-  title        = {ArabTop 2022: Insights into Arab World Trends},
-  year         = {2022},
+  title        = {ArabTop 2023: Insights into Arab World Trends},
+  year         = {2023},
   howpublished = {\url{https://ahmed.jp/blog/2022-12-ArabTop/ArabTop_2022.html}},
-  note         = {Accessed: 2025-01-09}
 }
 
 ```
+
 
 ## Acknowledgment
 
