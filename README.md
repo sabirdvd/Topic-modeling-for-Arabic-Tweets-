@@ -102,21 +102,23 @@ loading the tranined model
 python infer.py
 ``` 
 
- <!--
 ## Citation
 
-If you find this blog useful, please kindly cite it:
+If you choose to cite this blog or not, please use the following citation as a reference:
 
 ```bibtex
-@article{sabir2022arabtop,
-  title   = "Review: Topic Modeling for Arabic Language",
-  author  = "Sabir, Ahmed",
-  year    = "2022",
-  url     = "https://ahmed.jp/blog/2022-12-ArabTop/ArabTop_2022"
+@misc{ahmed2022arabtop,
+  author       = {Ahmed},
+  title        = {ArabTop 2022: Insights into Arab World Trends},
+  year         = {2022},
+  howpublished = {\url{https://ahmed.jp/blog/2022-12-ArabTop/ArabTop_2022.html}},
+  note         = {Accessed: 2025-01-09}
 }
+
 ```
--->
+
 ## Acknowledgment
 
 The implementation of the project relies on resources from BERTopic, Huggingface Transformers, and SBERT. We thank the original authors for their well-organized codebase.
+
 
